@@ -12,7 +12,7 @@ WX_DATA="$REPO/data/$DATE.json" WX_OUT="$TMP" python3 "$REPO/tool/render.py" sti
 ffmpeg -loglevel error -y -i "$TMP/still_$T.png" -q:v 3 "$REPO/images/$DATE.jpg"
 cd "$REPO"
 git add "videos/$DATE.mp4" "images/$DATE.jpg" "data/$DATE.json"
-git commit -qm "Weather brief $DATE"
+git commit -qm "Weather brief $DATE" -m "Co-Authored-By: Claude <noreply@anthropic.com>"
 git push -q origin HEAD:main
 B="https://raw.githubusercontent.com/aiinplanet/weather-assets/main"
 echo "VIDEO_URL=$B/videos/$DATE.mp4"
